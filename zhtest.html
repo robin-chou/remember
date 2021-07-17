@@ -12,18 +12,18 @@
 	<link rel="icon" type="image/png" href="favicon.png">
 	
 	<!-- Sharing Card Stuff -->
-	<meta itemprop="name" content="如何永远般地记住任何东西"> <!-- TRANSLATE "content" -->
+	<meta itemprop="name" content="如何记住微积分公式"> <!-- TRANSLATE "content" -->
 	<meta itemprop="description" content="一本关于记忆的艺术&科学的互动式连环画"> <!-- TRANSLATE "content" -->
 	<meta itemprop="image" content="http://ncase.me/remember/sharing/thumbnail.png">
 
-	<meta name="twitter：title" content="如何永远般地记住任何东西"> <!-- TRANSLATE "content" -->
+	<meta name="twitter：title" content="如何记住微积分公式"> <!-- TRANSLATE "content" -->
 	<meta name="twitter：description" content="一本关于记忆的艺术&科学的互动式连环画"> <!-- TRANSLATE "content" -->
 	<meta name="twitter：card" content="summary_large_image">
 	<meta name="twitter：site" content="@ncasenmare">
 	<meta name="twitter：creator" content="@ncasenmare">
 	<meta name="twitter：image" content="http://ncase.me/remember/sharing/thumbnail.png">
 
-	<meta property="og：title" content="如何永远般地记住任何东西"> <!-- TRANSLATE "content" -->
+	<meta property="og：title" content="如何记住微积分公式"> <!-- TRANSLATE "content" -->
 	<meta property="og：description" content="一本关于记忆的艺术&科学的互动式连环画"> <!-- TRANSLATE "content" -->
 	<meta property="og：type" content="website">
 	<meta property="og：url" content="http://ncase.me/remember/">
@@ -32,6 +32,16 @@
 	<!-- Styles -->
 	<link rel="stylesheet" type="text/css" href="css/comic-zh-Hans.css"/>
 	<meta name="viewport" content="width=600">
+	
+	<!-- Katex -->
+    	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc" crossorigin="anonymous">
+
+    	<!-- The loading of KaTeX is deferred to speed up page rendering -->
+    	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js" integrity="sha384-YNHdsYkH6gMx9y3mRkmcJ2mFUjTd0qNQQvY9VYZgQd7DcN7env35GzlmFaZ23JGp" crossorigin="anonymous"></script>
+
+    	<!-- To automatically render math in text elements, include the auto-render extension: -->
+   	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        	onload="renderMathInElement(document.body);"></script>
 
 </head>
 
@@ -49,12 +59,13 @@
 	<div id="divider_container">
 		<div id="chapter_name">
 			<div>
-			如何永远般地记住任何东西
+			如何记住微积分公式
+				<span class="katex"> c = \\pm\\sqrt{a^2 + b^2} </span>
 			</div>
 			<!-- TRANSLATOR NOTE： add a hint of silliness at the end, like "ish" or "sorta" -->
 		</div>
 		<div style="text-align:right;">
-			by nicky case &middot; oct 2018
+			by robin chou &middot; Jul 2021
 			<br>
 			<span id="translation_credits"></span> 
 			<!-- TRANSLATOR NOTE： when you update translations.txt, your name will appear here! -->
@@ -64,7 +75,6 @@
 
 <div class="comic">
 
-<div id="language_options"></div>
 
 <!--
 
@@ -113,17 +123,6 @@ If that's not possible, and your text doesn't fit in its box, you can modify att
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
 <a name="1"></a>
-<div class="divider divider_big_height">
-	<iframe class="splash" gotosrc="sims/splash/" scrolling="no"></iframe>
-	<div id="divider_container">
-		<div id="chapter_name">
-			<div>
-			<b>间隔重复的科学</b>
-			</div>
-		</div>
-		<div id="chapter_links"></div>
-	</div>
-</div>
 
 <div class="comic">
 
