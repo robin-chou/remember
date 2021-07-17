@@ -42,7 +42,22 @@
     	<!-- To automatically render math in text elements, include the auto-render extension: -->
    	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
         	onload="renderMathInElement(document.body);"></script>
-
+	<script>
+	    document.addEventListener("DOMContentLoaded", function() {
+		renderMathInElement(document.body, {
+		  // customised options
+		  // • auto-render specific keys, e.g.:
+		  delimiters: [
+		      {left: '$$', right: '$$', display: true},
+		      {left: '$', right: '$', display: false},
+		      {left: '\\(', right: '\\)', display: false},
+		      {left: '\\[', right: '\\]', display: true}
+		  ],
+		  // • rendering keys, e.g.:
+		  throwOnError : false
+		});
+	    });
+	</script>
 </head>
 
 <body>
@@ -60,7 +75,6 @@
 		<div id="chapter_name">
 			<div>
 			如何记住微积分公式
-				<span class="katex"> c = \\pm\\sqrt{a^2 + b^2} </span>
 			</div>
 			<!-- TRANSLATOR NOTE： add a hint of silliness at the end, like "ish" or "sorta" -->
 		</div>
@@ -109,8 +123,10 @@ If that's not possible, and your text doesn't fit in its box, you can modify att
 <panel w=600 h=400 bg="#e0e0e0">
 <sim x=0 y=0 w=600 h=400 src="sims/multicard/?cards=intro_a,intro_b,intro_c"></sim>
 </panel>
-
-
+<span class="math"/>
+<script>	
+	katex.render("x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}", document.getElementById("math"));	
+</script>
 </div>
 
 
@@ -129,7 +145,7 @@ If that's not possible, and your text doesn't fit in its box, you can modify att
 <panel w=500 h=450>
 <pic src="pics/sci0.png" sx=0 sy=0></pic>
 <words x=10 y=10 w=400 h=50>
-	1885年，赫尔曼·艾宾豪斯进行了一项科学的自虐行为。
+	<span class="katex"> $$c = \\pm\\sqrt{a^2 + b^2}$$ </span>
 </words>
 <words x=30 y=320 w=430 h=80>
 	这个德国心理学家首先背下了<i>几千个</i> 毫无意义的单词，然后记录了自己遗忘程度随时间的变化，接着他发现了...
