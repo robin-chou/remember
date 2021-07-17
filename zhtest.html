@@ -58,6 +58,9 @@
 		});
 	    });
 	</script>
+	<script>	
+		katex.render("x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}", document.getElementById("math"));	
+	</script>
 </head>
 
 <body>
@@ -123,10 +126,8 @@ If that's not possible, and your text doesn't fit in its box, you can modify att
 <panel w=600 h=400 bg="#e0e0e0">
 <sim x=0 y=0 w=600 h=400 src="sims/multicard/?cards=intro_a,intro_b,intro_c"></sim>
 </panel>
-<span class="math"/>
-<script>	
-	katex.render("x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}", document.getElementById("math"));	
-</script>
+<span class="math"></span>
+
 </div>
 
 
