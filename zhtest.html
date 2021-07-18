@@ -75,11 +75,13 @@ document.onreadystatechange = function(){
 	 alert('页面加载完毕');
 	 katex.render("x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}", document.getElementById("fomula_1"));
     }
-
+　　function aaa(){ 
+　　　　alert("静态标签====》onload"); 
+　　}
 </script>
 </head>
 
-<body>
+<body οnlοad="aaa()">
 
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
