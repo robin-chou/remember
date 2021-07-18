@@ -46,10 +46,10 @@
   function ready() {
 	//alert('DOM is ready:'+document.getElementById("fomula_1").value);
 	if (!document.getElementById("fomula_1").value) {
-		katex.render("-\frac{1}{\sqrt{1-{x^2}}}dx", document.getElementById("fomula_1"));
+		katex.render("-\\frac{1}{\\sqrt{1-{x^2}}}dx", document.getElementById("fomula_1"));
 	}
-	katex.render("d(\arccos x)", document.getElementById("fomula_2_1b"));
-	katex.render("-\frac{1}{\sqrt{1-{x^2}}}dx", document.getElementById("fomula_2_1f"));
+	katex.render("d(\\arccos x)", document.getElementById("fomula_2_1f"));
+	katex.render("-\\frac{1}{\\sqrt{1-{x^2}}}dx", document.getElementById("fomula_2_1b"));
   }
 	
 document.addEventListener("DOMContentLoaded", ready);
