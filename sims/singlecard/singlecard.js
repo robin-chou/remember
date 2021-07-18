@@ -70,7 +70,7 @@ $("#front").innerHTML = frontHTML;
 $("#back").innerHTML = backHTML;
 
 _modifyFlashCard($("#front"));
-//_modifyFlashCard($("#back"));
+_modifyFlashCard($("#back"));
 
 // Refresh in real time...
 if(_getQueryVariable("refresh")=="yes"){
