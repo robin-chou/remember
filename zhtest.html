@@ -44,8 +44,8 @@
 	
 <script>
   function ready() {
-	alert('DOM is ready:'+document.getElementById("fomula_1").value);
-	if (document.getElementById("fomula_1").value == "") {
+	//alert('DOM is ready:'+document.getElementById("fomula_1").value);
+	if (!document.getElementById("fomula_1").value) {
 		katex.render("x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}", document.getElementById("fomula_1"));
 	}
   }
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", ready);
 	
   function load() {
    // alert('window is loaded');
-  //  katex.render("x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}", document.getElementById("fomula_2"));
+    katex.render("x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}", document.getElementById("fomula_2"));
   }
 	
 window.addEventListener("load",load); 
