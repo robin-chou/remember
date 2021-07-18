@@ -3,28 +3,22 @@
 <head>
 
 	<!-- Meta Stuff -->
-	<title>How To Remember Anything Forever-ish</title>
+	<title>Remember Fomulars Forever-ish</title>
 	<!-- TRANSLATOR NOTE： Translate the "content" attribute -->
-	<meta name="description" content="an interactive comic on the art & science of memory"/> 
 	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 	<meta content="utf-8" http-equiv="encoding">
 	<meta charset="utf-8">
 	<link rel="icon" type="image/png" href="favicon.png">
 	
 	<!-- Sharing Card Stuff -->
-	<meta itemprop="name" content="微积分公式"> <!-- TRANSLATE "content" -->
-	<meta itemprop="description" content="一本关于记忆的艺术&科学的互动式连环画"> <!-- TRANSLATE "content" -->
-	<meta itemprop="image" content="http://ncase.me/remember/sharing/thumbnail.png">
+	<meta itemprop="name" content="微积分公式"> 
 
-	<meta property="og：title" content="微积分公式"> <!-- TRANSLATE "content" -->
-	<meta property="og：description" content="一本关于记忆的艺术&科学的互动式连环画"> <!-- TRANSLATE "content" -->
+	<meta property="og：title" content="微积分公式"> 
 	<meta property="og：type" content="website">
-	<meta property="og：url" content="http://ncase.me/remember/">
-	<meta property="og：image" content="http://ncase.me/remember/sharing/thumbnail.png">
 
 	<!-- Styles -->
 	<link rel="stylesheet" type="text/css" href="css/comic-zh-Hans.css"/>
-	<meta name="viewport" content="width=600">
+	<meta name="viewport" content="width=800">
 	
 	<!-- Katex -->
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc" crossorigin="anonymous">
@@ -41,8 +35,18 @@
 	if (!document.getElementById("fomula_1").value) {
 		katex.render("-\\frac{1}{\\sqrt{1-{x^2}}}dx", document.getElementById("fomula_1"));
 	}
-	katex.render("d(\\arccos x)", document.getElementById("fomula_2_1f"));
-	katex.render("-\\frac{1}{\\sqrt{1-{x^2}}}dx", document.getElementById("fomula_2_1b"));
+	katex.render("d(\\arcsin x)", document.getElementById("fomula_2_1f"));
+	katex.render("\\frac{1}{\\sqrt{1-{x^2}}}dx", document.getElementById("fomula_2_1b"));
+	  
+	katex.render("d(\\arccos x)", document.getElementById("fomula_2_2f"));
+	katex.render("-\\frac{1}{\\sqrt{1-{x^2}}}dx", document.getElementById("fomula_2_2b"));
+	  
+	katex.render("d(\\arctan x)", document.getElementById("fomula_2_3f"));
+	katex.render("\\frac{1}{1+{x^2}}dx", document.getElementById("fomula_2_3b"));
+	  
+	katex.render("d(\\arccot x)", document.getElementById("fomula_2_4f"));
+	katex.render("-\\frac{1}{1+{x^2}}dx", document.getElementById("fomula_2_4b"));
+
   }
 	
 document.addEventListener("DOMContentLoaded", ready);
@@ -50,9 +54,6 @@ document.addEventListener("DOMContentLoaded", ready);
   function load() {
    // alert('window is loaded');
     	katex.render("x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}", document.getElementById("fomula_2"));
-	katex.render("d(\\arctan x)", document.getElementById("fomula_2_2f"));
-	katex.render("\\frac{1}{1+{x^2}}dx", document.getElementById("fomula_2_2b"));
-
   }
 	
 window.addEventListener("load",load); 
@@ -120,7 +121,7 @@ If that's not possible, and your text doesn't fit in its box, you can modify att
 
 
 <panel w=600 h=400 bg="#e0e0e0">
-<sim x=0 y=0 w=600 h=400 src="sims/multicard/?cards=intro_a,intro_b,intro_c"></sim>
+<sim x=0 y=0 w=600 h=400 src="sims/multicard/?cards=intro_a,intro_b,intro_c, intro_d, intro_e"></sim>
 </panel>
 
 
@@ -351,17 +352,35 @@ Good luck!
 	</div>
 </span>
 <span id="flashcard_intro_c_front">
-	<div id="fc_words" class="fcard_center" style="height:4.4em">
-	在希腊神话中，
-	女神<span class="underline">____</span>
-	是女神<span class="underline">________</span>
-	的母亲
+	<div id="fc_words" class="fcard_center" style="height:2.5em">
+	求 <span id="fomula_2_3f"></span>
 	</div>
 </span>
 <span id="flashcard_intro_c_back">
+	<div id="fc_words" class="fcard_center" style="height:2.2em">
+	  <span id="fomula_2_3b"></span>
+	</div>
+</span>
+<span id="flashcard_intro_d_front">
+	<div id="fc_words" class="fcard_center" style="height:2.5em">
+	求 <span id="fomula_2_4f"></span>
+	</div>
+</span>
+<span id="flashcard_intro_d_back">
+	<div id="fc_words" class="fcard_center" style="height:2.2em">
+	  <span id="fomula_2_4b"></span>
+	</div>
+</span>
+<span id="flashcard_intro_e_front">
+	<div id="fc_words" class="fcard_center" style="height:4.4em">
+		d(arccos x) = <span class="underline">___</span> d(arcsin x)
+		d(arccot x) = <span class="underline">___</span> d(arctan x)
+	</div>
+</span>
+<span id="flashcard_intro_e_back">
 	<div class="fcard_bg" src="pics/fcards_intro.png" sx=400 sy=0></div>
 	<div id="fc_words" style="position: absolute; width:250px; top:50px; left:140px; line-height:1.1em;color:white">
-	记忆是灵感的母亲
+		为何它们正好相反？记忆是灵感的母亲
 	</div>
 </span>
 
