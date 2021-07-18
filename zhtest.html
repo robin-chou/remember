@@ -59,7 +59,16 @@
 	    });
 	</script>
 	<!-- <script> katex.render("x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}", document.getElementById("math")); </script> -->
-
+<script>
+  function ready() {
+    alert('DOM is ready');
+  }
+// (1)、页面所有内容加载完成执行
+window.onload = function(){
+    katex.render("x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}", document.getElementById("fomula_1"));
+}
+  document.addEventListener("DOMContentLoaded", ready);
+</script>
 </head>
 
 <body>
@@ -2032,7 +2041,7 @@ Good luck!
 
 <span id="flashcard_spaced_rep_front">
 	<div class="fcard_center" style="height:2.5em">
-	而这个游戏的名字便是...
+	 <span id="fomula_1"></span>							      
 	 <span class="katex">$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$</span>
 	</div>
 </span>
