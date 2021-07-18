@@ -32,9 +32,6 @@
 <script>
   function ready() {
 	//alert('DOM is ready:'+document.getElementById("fomula_1").value);
-	if (!document.getElementById("fomula_1").value) {
-		katex.render("-\\frac{1}{\\sqrt{1-{x^2}}}dx", document.getElementById("fomula_1"));
-	}
 	katex.render("d(\\arcsin x)", document.getElementById("fomula_2_1f"));
 	katex.render("\\frac{1}{\\sqrt{1-{x^2}}}dx", document.getElementById("fomula_2_1b"));
 	  
@@ -53,7 +50,11 @@ document.addEventListener("DOMContentLoaded", ready);
 	
   function load() {
    // alert('window is loaded');
-    	katex.render("x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}", document.getElementById("fomula_2"));
+	if (!document.getElementById("fomula_1").value) {
+		katex.render("d(\\ln x)=?", document.getElementById("fomula_1"));
+	}
+
+    	katex.render("\\frac {1}{x} dx", document.getElementById("fomula_2"));
   }
 	
 window.addEventListener("load",load); 
@@ -133,14 +134,13 @@ If that's not possible, and your text doesn't fit in its box, you can modify att
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
-<span class="katex"> $$c=\pm\sqrt{a^2 + b^2}$$ </span>
 	
 <div class="comic">
 
 <panel w=500 h=450>
 <pic src="pics/sci0.png" sx=0 sy=0></pic>
 <words x=10 y=10 w=400 h=50>
-	<span class="katex">$$c=\sqrt{a^2 + b^2}$$ </span>
+	没想到还能用来记数学公式，如一元二次方程公式解<span class="katex">$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$ </span>
 </words>
 <words x=30 y=320 w=430 h=80>
 	这个德国心理学家首先背下了<i>几千个</i> 毫无意义的单词，然后记录了自己遗忘程度随时间的变化，接着他发现了...
@@ -318,7 +318,7 @@ Good luck!
 
 <span id="flashcard_spaced_rep_front">
 	<div class="fcard_center" style="height:2.5em">
-	 <span id="fomula_1"></span>							      
+	问微分特型 <span id="fomula_1"></span>							      
 	</div>
 </span>
 <span id="flashcard_spaced_rep_back">
