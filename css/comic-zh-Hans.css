@@ -115,14 +115,14 @@ a:hover{
 .comic{
 	position: relative;
 	overflow:hidden;
-	width:610px;
+	width: 710px;
 	margin: 50px auto;
 	text-align: center;
 }
 .comic panel{
 	display: inline-block;
-	width: 400px;
-	height: 300px;
+	width: 600px;
+	height: 450px;
 	/*border: 2px solid #ccc;*/
 	margin: 5px;
 	position: relative;
@@ -289,9 +289,9 @@ a:hover{
 	transition: top 0.5s ease-in-out;
 
 	text-align: center;
-    font-size: 30px;
-    padding: 15px 0 20px 0;
-    line-height: 1.3em;
+    	font-size: 30px;
+   	padding: 15px 0 20px 0;
+    	line-height: 1.3em;
 
 }
 #prompt[hide=yes]{
@@ -318,7 +318,7 @@ a:hover{
 
 #language_options{
 	
-	position: absolute;
+    position: absolute;
     width: 80px;
     text-align: left;
     top: 8px;
