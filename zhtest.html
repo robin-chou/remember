@@ -12,18 +12,11 @@
 	<link rel="icon" type="image/png" href="favicon.png">
 	
 	<!-- Sharing Card Stuff -->
-	<meta itemprop="name" content="如何记住微积分公式"> <!-- TRANSLATE "content" -->
+	<meta itemprop="name" content="微积分公式"> <!-- TRANSLATE "content" -->
 	<meta itemprop="description" content="一本关于记忆的艺术&科学的互动式连环画"> <!-- TRANSLATE "content" -->
 	<meta itemprop="image" content="http://ncase.me/remember/sharing/thumbnail.png">
 
-	<meta name="twitter：title" content="如何记住微积分公式"> <!-- TRANSLATE "content" -->
-	<meta name="twitter：description" content="一本关于记忆的艺术&科学的互动式连环画"> <!-- TRANSLATE "content" -->
-	<meta name="twitter：card" content="summary_large_image">
-	<meta name="twitter：site" content="@ncasenmare">
-	<meta name="twitter：creator" content="@ncasenmare">
-	<meta name="twitter：image" content="http://ncase.me/remember/sharing/thumbnail.png">
-
-	<meta property="og：title" content="如何记住微积分公式"> <!-- TRANSLATE "content" -->
+	<meta property="og：title" content="微积分公式"> <!-- TRANSLATE "content" -->
 	<meta property="og：description" content="一本关于记忆的艺术&科学的互动式连环画"> <!-- TRANSLATE "content" -->
 	<meta property="og：type" content="website">
 	<meta property="og：url" content="http://ncase.me/remember/">
@@ -56,7 +49,10 @@ document.addEventListener("DOMContentLoaded", ready);
 	
   function load() {
    // alert('window is loaded');
-    katex.render("x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}", document.getElementById("fomula_2"));
+    	katex.render("x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}", document.getElementById("fomula_2"));
+	katex.render("d(\\arctan x)", document.getElementById("fomula_2_2f"));
+	katex.render("\\frac{1}{1+{x^2}}dx", document.getElementById("fomula_2_2b"));
+
   }
 	
 window.addEventListener("load",load); 
@@ -78,7 +74,7 @@ window.addEventListener("load",load);
 	<div id="divider_container">
 		<div id="chapter_name">
 			<div>
-			如何记住微积分公式
+			微积分公式
 			</div>
 			<!-- TRANSLATOR NOTE： add a hint of silliness at the end, like "ish" or "sorta" -->
 		</div>
@@ -140,7 +136,6 @@ If that's not possible, and your text doesn't fit in its box, you can modify att
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
-<a name="1"></a>
 <span class="katex"> $$c=\pm\sqrt{a^2 + b^2}$$ </span>
 	
 <div class="comic">
@@ -166,19 +161,6 @@ If that's not possible, and your text doesn't fit in its box, you can modify att
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
 <div id="labels">
-
-<!-- Chapter Links -->
-<span id="label_chapter_links">
-	<a href="#0">简介</a>
-	&middot;
-	<a href="#1">科学</a>
-	&middot;
-	<a href="#2">艺术</a>
-	&middot;
-	<a href="#3">开始吧！</a>
-	&middot;
-	<a href="#bye">来源出处</a>
-</span>
 
 <!-- Multi Card Labels -->
 <span id="multicard_q">
@@ -208,28 +190,7 @@ If that's not possible, and your text doesn't fit in its box, you can modify att
 	&darr;
 </span>
 
-<!-- Ebbinghaus Simulation -->
-<span id="ebbinghaus_y_axis">
-	记忆的强度 &rarr;
-</span>
-<span id="ebbinghaus_x_axis">
-	时间 &rarr;
-</span>
-<span id="ebbinghaus_decay">
-	衰减率：
-</span>
-<span id="ebbinghaus_forgetting">
-	最佳时机：
-</span>
-<span id="ebbinghaus_recall">
-	回想的时间点：
-</span>
-<span id="ebbinghaus_recalls">
-	多个回想的时间点：
-</span>
-<span id="ebbinghaus_auto">
-	自动优化！
-</span>
+
 
 <!-- Leitner Calendar -->
 <!--
@@ -332,91 +293,6 @@ When you translate, make sure the [N] is there if it was there in the original.
 	<li>(其他时候)</li>
 </span>
 
-<!-- Gifts -->
-<span id="gift_wallpaper_what">
-	学什么：
-</span>
-<span id="gift_wallpaper_why">
-	为什么：
-</span>
-<span id="gift_wallpaper_do_1">
-	开
-</span>
-<span id="gift_wallpaper_do_2">
-	工！
-</span>
-<span id="gift_wallpaper_filename">
-	墙纸
-</span>
-<span id="gift_wallpaper_desktop">
-	一张为你桌面准备的墙纸，
-</span>
-<span id="gift_wallpaper_phone">
-	一张为你手机准备的锁屏壁纸，
-</span>
-<span id="gift_app_leitner">
-	我亲爱的朋友Chris Walker做的，一段关于如何手工制作属于你自己的Leitner盒的视频！
-	<br><br>
-	<iframe width="560" height="315" src="http://www.youtube-nocookie.com/embed/uvF1XuseZFE?rel=0"
-		    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
-		    style="display:block; margin:0 auto"></iframe>
-	<br>
-	(这里是一个相似的教程，仿宜家风格的：)
-	<br><br>
-	<a target="_blank" href="./pdf/leitner.pdf" style="display: block; text-align: center;">
-	<img src="./pdf/thumbnail.png" width="450"/><br>点击下载PDF</a>
-</span>
-<span id="gift_app_anki">
-	链接
-	<a target="_blank" href="http://apps.ankiweb.net/">下载Anki!</a>
-	这是一个怎么使用它的视频教程：
-	<br><br>
-	<iframe width="560" height="315" src="http://www.youtube-nocookie.com/embed/sQkdB3cJwn0?start=180&rel=0"
-		    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
-		    style="display:block; margin:0 auto"></iframe>
-</span>
-<span id="gift_app_tiny">
-	链接到
-	<a target="_blank" href="http://tinycards.duolingo.com/">
-	TinyCards!</a>
-	(我建议去瞅瞅他们的
-	<a target="_blank" href="http://tinycards.duolingo.com/users/TinyGeo">
-	地理卡片集</a>)
-</span>
-<span id="gift_app_other">
-	手工制作Leitner盒的教程链接
-	<a target="_blank" href="http://www.youtube.com/watch?v=uvF1XuseZFE">
-	[视频]</a>
-	<a target="_blank" href="./pdf/leitner.pdf">
-	[pdf]</a>,
-	<a target="_blank" href="http://apps.ankiweb.net/">
-	Anki App</a>,
-	以及
-	<a target="_blank" href="http://tinycards.duolingo.com/">
-	TinyCards</a>！
-</span>
-
-<!-- Downloading Cards -->
-<span id="download_all">
-	下载所有卡片
-</span>
-<span id="download_all_downloading">
-	下载中...
-</span>
-<span id="download_all_done">
-	下完了！查看你的下载文件夹。
-</span>
-
-<!-- Social Sharing -->
-<span id="share_title">
-	如何永远般地记住任何事情
-</span>
-<span id="share_desc">
-	一本关于记忆的艺术 & 科学的互动式连环画
-</span>
-
-
-
 
 <!--
 
@@ -467,12 +343,12 @@ Good luck!
 </span>
 <span id="flashcard_intro_b_front">
 	<div id="fc_words" class="fcard_center" style="height:4.5em">
-	3个常见但无效的学习/教学惯例是...
+	求 <span id="fomula_2_2f"></span>
 	</div>
 </span>
 <span id="flashcard_intro_b_back">
 	<div id="fc_words" class="fcard_center" style="height:2.2em">
-	...课堂式讲课，填鸭式用功，和重复阅读
+	  <span id="fomula_2_2b"></span>
 	</div>
 </span>
 <span id="flashcard_intro_c_front">
