@@ -63,12 +63,19 @@
   function ready() {
     alert('DOM is ready');
   }
+document.addEventListener("DOMContentLoaded", ready);
 // (1)、页面所有内容加载完成执行
 window.onload = function(){
-    katex.render("$$x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}$$", document.getElementById("fomula_1"));
     alert('window is onload');
 }
-  document.addEventListener("DOMContentLoaded", ready);
+// (2)、页面加载完毕
+document.onreadystatechange = function(){
+    if(doucument.readyState == 'complete'){
+        // 页面加载完毕
+	 alert('页面加载完毕');
+	 katex.render("x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}", document.getElementById("fomula_1"));
+    }
+
 </script>
 </head>
 
