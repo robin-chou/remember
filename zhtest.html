@@ -44,7 +44,9 @@
 <script>
   function ready() {
 	// alert('DOM is ready');
-	katex.render("x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}", document.getElementById("fomula_1"));
+	if (!document.getElementById("fomula_1").value) {
+		katex.render("x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}", document.getElementById("fomula_1"));
+	}
   }
 	
 document.addEventListener("DOMContentLoaded", ready);
