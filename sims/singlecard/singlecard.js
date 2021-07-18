@@ -67,10 +67,10 @@ window.cardname = _getQueryVariable("card");
 var frontHTML = _getLabel("flashcard_"+cardname+"_front");
 var backHTML = _getLabel("flashcard_"+cardname+"_back");
 $("#front").innerHTML = frontHTML;
-$("#back").innerHTML = backHTML;
+//$("#back").innerHTML = backHTML;
 
 _modifyFlashCard($("#front"));
-_modifyFlashCard($("#back"));
+//_modifyFlashCard($("#back"));
 
 // Refresh in real time...
 if(_getQueryVariable("refresh")=="yes"){
