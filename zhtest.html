@@ -58,30 +58,27 @@
 		  throwOnError : false
 		});
 	    });
-	</script>
-	<!-- <script> katex.render("x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}", document.getElementById("math")); </script> -->
+	</script>	
 	
 <script>
   function ready() {
-    alert('DOM is ready');
+	// alert('DOM is ready');
+	katex.render("x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}", document.getElementById("fomula_1"));
   }
 	
 document.addEventListener("DOMContentLoaded", ready);
 	
   function load() {
-    alert('window is loaded');
-    katex.render("x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}", document.getElementById("fomula_1"));
+   // alert('window is loaded');
+    katex.render("x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}", document.getElementById("fomula_2"));
   }
 	
 window.addEventListener("load",load); 
 
-　　function aaa(){ 
-　　　　alert('静态标签====》onload'); 
-　　}
 </script>
 </head>
 
-<body οnlοad="aaa()">
+<body>
 
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -468,7 +465,7 @@ Good luck!
 <span id="flashcard_spaced_rep_back">
 	<div class="fcard_bg" src="pics/fcards_intro.png" sx=0 sy=0></div>
 	<div class="fcard_center" style="color:white; font-size:40px; height:1.6em; line-height:0.8em;">
-	  <span class="katex">$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$</span>
+	  <span id="fomula_2"></span>
 	</div>
 </span>
 <span id="flashcard_intro_a_front">
@@ -479,7 +476,7 @@ Good luck!
 <span id="flashcard_intro_a_back">
 	<div class="fcard_bg" src="pics/fcards_intro.png" sx=0 sy=240></div>
 	<div id="fc_words" class="fcard_center" style="height:2.5em">
-	测试 + 时间
+		<span class="katex">$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$</span>
 	</div>
 </span>
 <span id="flashcard_intro_b_front">
