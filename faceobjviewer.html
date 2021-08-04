@@ -27,36 +27,15 @@
 		<meta property="twitter:image" content="https://www.robots.ox.ac.uk/~vgg/blog/images/unsup3d/preview_image.png" />
 	</head>
 	<body class="landing ">
-		<div id="page-wrapper">
-
-			<!-- Header -->
-				<!-- <header id="header" class="alt">
-					<nav id="nav">
-						<ul>
-							<li><a href="index.html">Link</a></li>
-						</ul>
-					</nav>
-				</header> -->
-
-			<!-- Banner -->
-				<section id="banner" class="">
-					<h2><a href="//www.robots.ox.ac.uk/~vgg/blog/">Visual Geometry Group blog</a></h2>
-					<p><a href="//www.robots.ox.ac.uk/~vgg/blog/">Research news from our lab at the University of Oxford</a></p>
-				</section>
-
+	  <div id="page-wrapper">
+	
 			<!-- Main -->
 				<section id="main" class="container">
 
-	<div class="box">
-		<header class="major">
-			<h2><a href="//www.robots.ox.ac.uk/~vgg/blog/unsupervised-learning-of-probably-symmetric-deformable-3d-objects-from-images-in-the-wild.html">Unsupervised Learning of Probably Symmetric Deformable 3D Objects from Images in the Wild</a></h2>
-			<h4>
-<a href="//www.robots.ox.ac.uk/~vgg/blog/author/shangzhe-wu-christian-rupprecht-andrea-vedaldi.html">Shangzhe Wu & Christian Rupprecht & Andrea Vedaldi</a>			</h4>
-		</header>
-
+	    <div class="box">
 			<p><em>Summary: We propose a method to learn weakly symmetric deformable 3D object categories from raw single-view images, without ground-truth 3D, multiple views, 2D/3D keypoints, prior shape models or any other supervision.</em></p>
 
-		<script>
+<script>
 $(document).ready(function () {
     initViewer();
     for (var i=1; i <= 15; i++)
@@ -164,7 +143,7 @@ This work has received the <strong>CVPR 2020 Best Paper Award</strong>.
 <!-- more -->
 
 <h2>Demo</h2>
-<p><p class="image fit" style="max-width: 1024px">
+
     <div style="width:100%; display: flex">
         <div style="width: 10%; float: left; border: 1px solid black; margin: 5px 5px 5px 0; padding: 5px">
             <h4>Input</h4>
@@ -208,161 +187,8 @@ This work has received the <strong>CVPR 2020 Best Paper Award</strong>.
         <h3>or select one of the examples below</h3>
         <div class="imgcontainer" id="demoimages"></div>
     </div>
-</p></p>
-<h2>Method Overview</h2>
-<p>We propose a method to learn 3D deformable object categories
-from raw single-view images, <strong>without any manual or external supervision</strong>.
-The method is based on an autoencoder that factors
-each input image into depth, albedo, viewpoint and illumination.
-In order to disentangle these components without
-supervision, we use the fact that many object categories have,
-at least in principle, a symmetric structure. We show that reasoning
-about illumination allows us to exploit the underlying
-object symmetry even if the appearance is not symmetric due
-to shading. Furthermore, we model objects that are probably,
-but not certainly, symmetric by predicting a symmetry probability
-map, learned end-to-end with the other components
-of the model.</p>
-<p class="image fit" style="max-width: 1024px">
-  <iframe width="1024" height="576" src="https://www.youtube-nocookie.com/embed/5rPJyrU-WE4" style="max-width: 100%" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</p>
-
-<h3>Photo-Geometric Autoencoding</h3>
-<p>Our method is based on an autoencoder that factors each input image into <strong>depth</strong>, <strong>albedo</strong>, <strong>viewpoint</strong> and <strong>lighting</strong>.
-These four components are combined to reconstruct the input image. The model is trained only using a reconstruction loss, without any external supervision.</p>
-<p class="image fit" style="max-width: 960px">
-  <video autoplay loop muted inline width="960" style="max-width: 100%">
-    <source src="./images/unsup3d/autoencoding.mp4" type="video/mp4" alt="Photo-Geometric Autoencoding">
-  </video>
-</p>
-
-<h3>Exploiting Symmetry</h3>
-<p>In order to achieve this decomposition without supervision, we exploit the fact that many object categories have <strong>a bilateral symmetry</strong>.
-Assuming an object is perfectly symmetric, one can obtain a virtual second view of it by simply mirroring the image and perform 3D reconstruction using stereo geometry [1, 2].</p>
-<p>Here, we would like to leverage this symmetry assumption.
-We enforce the model to predict a symmetric view of the object by injecting a flipping operation, and obtain two reconstructions (with and without flipping) of the same input view through predicted viewpoint transformation.
-Minimizing two reconstruction losses at the same time essentially imposes a &ldquo;two-view&rdquo; constraint and provides sufficient signal for recovering accurate 3D shapes.</p>
-<p class="image fit" style="max-width: 960px">
-  <video autoplay loop muted inline width="960" style="max-width: 100%">
-    <source src="./images/unsup3d/symmetry.mp4" type="video/mp4" alt="Exploiting symmetry via Photo-Geometric Autoencoding">
-  </video>
-</p>
-
-<p>Note that even if an object has symmetric intrinsic textures (aka. albedo), it may still result in an asymmetric appearance due to asymmetric illumination.
-Here, this is handled by predicting albedo and lighting separately, and enforcing symmetry only on albedo while allowing the shading to be asymmetric.
-We assume a simple Lambertian illumination model, and compute a shading map from the predicted light direction and depth map.</p>
-<p>In fact, doing so does not only allow the model to learn accurate intrinsic image decomposition, but also provides strong regularization on the shape prediction (similar to shape from shading)!
-Unnatural shapes are avoided since they result in unnatural shading and thus a higher reconstruction loss.</p>
-<h3>Probabilistic Modeling of Symmetry using Confidence Maps</h3>
-<p>Although symmetry provides strong signal for recovering 3D shapes, specific object instances are in practice never fully symmetric.
-We account for potential asymmetry using uncertainty modeling [3].
-Our model additionally predicts a pair of per-pixel confidence maps, and is trained to minimize the two confidence-adjusted reconstruction losses at the same time, and with asymmetric weights to allow for a dominant side.</p>
-<p class="image fit" style="max-width: 960px">
-  <video autoplay loop muted inline width="960" style="max-width: 100%">
-    <source src="./images/unsup3d/confidence.mp4" type="video/mp4" alt="Probabilistic modeling of symmetry using confidence maps">
-  </video>
-</p>
-
-<h3>Acknowledgements</h3>
-<p>We are deeply indebted to all members of Visual Geometry Group for insightful discussions and suggestions, in particular, Sophia Koepke, Gül Varol, Erika Lu, Olivia Wiles, Iro Laina, Dan Xu, Fatma Güney, Tengda Han and Andrew Zisserman. We would also like to thank Abhishek Dutta, Ernesto Coto and João Henriques for their assistance in setting up this demo website. We are also grateful to Soumyadip Sengupta for sharing with us the code to generate synthetic face datasets, and to Mihir Sahasrabudhe for sending us the reconstruction results of Lifting AutoEncoders. This work is jointly supported by Facebook Research and ERC Horizon 2020 research and innovation programme IDIU 638009.</p>
-<h3>References</h3>
-<p><br>
-[1] Mirror Symmetry ⇒ 2-View Stereo Geometry. Alexandre R. J. François, Gérard G. Medioni, and Roman Waupotitsch. Image and Vision Computing, 2003.
-<br>
-[2] Detecting and Reconstructing 3D Mirror Symmetric Objects. Sudipta N. Sinha, Krishnan Ramnath, and Richard Szeliski. Proc. ECCV, 2012.
-<br>
-[3] What Uncertainties Do We Need in Bayesian Deep Learning for Computer Vision? Alex Kendall and Yarin Gal. NeurIPS, 2017.
-<br></p>
-<p>Author&rsquo;s webpage: <a href="https://elliottwu.com/">Shangzhe</a> &amp; <a href="https://chrirupp.github.io/">Christian</a></p>
-
-		<h5 class="align-right header" style="font-style: italic">
-<a href="//www.robots.ox.ac.uk/~vgg/blog/author/shangzhe-wu-christian-rupprecht-andrea-vedaldi.html">Shangzhe Wu & Christian Rupprecht & Andrea Vedaldi</a>, 26 February 2020
-		</h5>
-
-		<ul class="icons align-right">
-			<li><a href="https://twitter.com/share?url=https://www.robots.ox.ac.uk/~vgg/blog/unsupervised-learning-of-probably-symmetric-deformable-3d-objects-from-images-in-the-wild.html" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-			<li><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.robots.ox.ac.uk/~vgg/blog/unsupervised-learning-of-probably-symmetric-deformable-3d-objects-from-images-in-the-wild.html" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-		</ul>
-
-	</div>
-
-	<h2 class="align-center">More from the VGG blog</h2>
-
-	<div class="row">
-		<div class="3u 4u(narrow) 6u(mobilep)">
-
-			<section class="box special">
-				<a href="//www.robots.ox.ac.uk/~vgg/blog/shapestacks-giving-robots-a-physical-intuition.html"><span class="image featured"><img src="//www.robots.ox.ac.uk/~vgg/blog/images/shapestacks/shapestacks_thumbnail.png" alt="" /></span>
-				<h3>ShapeStacks: Giving Robots a Physical Intuition</h3></a>
-			</section>
-
-		</div>
-		<div class="3u 4u(narrow) 6u(mobilep)">
-
-			<section class="box special">
-				<a href="//www.robots.ox.ac.uk/~vgg/blog/self-labelling-via-simultaneous-clustering-and-representation-learning.html"><span class="image featured"><img src="//www.robots.ox.ac.uk/~vgg/blog/images/selflabel/overview.png" alt="" /></span>
-				<h3>Self-Labelling via simultaneous clustering and representation learning</h3></a>
-			</section>
-
-		</div>
-		<div class="3u 4u(narrow) 6u(mobilep)">
-
-			<section class="box special">
-				<a href="//www.robots.ox.ac.uk/~vgg/blog/mapping-environments-with-deep-networks.html"><span class="image featured"><img src="//www.robots.ox.ac.uk/~vgg/blog/images/mapnet/pointcloud.png" alt="" /></span>
-				<h3>Mapping environments with deep networks</h3></a>
-			</section>
-
-		</div>
-		<div class="3u 4u(narrow) 6u(mobilep)">
-
-			<section class="box special">
-				<a href="//www.robots.ox.ac.uk/~vgg/blog/comparator-networks.html"><span class="image featured"><img src="//www.robots.ox.ac.uk/~vgg/blog/images/comparator/thumbnail.png" alt="" /></span>
-				<h3>Comparator Networks</h3></a>
-			</section>
-
-		</div>
-	</div>
-
-				</section>
-
-			<!-- CTA --> <!-- alternative: https://web.maillist.ox.ac.uk/ox/subscribe/vggblog/<email> -->
-				<!--
-				<section id="cta">
-
-					<h2>Receive new posts by e-mail</h2>
-					<p>At most one post per week.</p>
-
-					<form action="https://web.maillist.ox.ac.uk/ox/" method="POST">
-						<input type="hidden" name="action" value="subscribe" />
-						<input type="hidden" name="list" value="vggblog" />
-						<div class="row uniform 50%">
-							<div class="8u 12u(mobilep)">
-								<input name="email" id="email" placeholder="Email Address" type="email">
-							</div>
-							<div class="4u 12u(mobilep)">
-								<input value="Sign Up" class="fit" type="submit">
-							</div>
-						</div>
-					</form>
-
-				</section>
-				-->
-
-			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
- <li><a href="//www.robots.ox.ac.uk/~vgg/blog/" class="icon fa-chevron-circle-left"><span class="label">VGG blog</span></a></li> 						<li><a href="http://www.robots.ox.ac.uk/~vgg/" class="icon fa-home"><span class="label">VGG website</span></a></li>
-						<li><a href="//www.robots.ox.ac.uk/~vgg/blog/feeds/all.atom.xml" class="icon fa-rss"><span class="label">RSS feed</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Visual Geometry Group.</li>
-						<li>Reuse permitted under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a> license.</li>
-						<li>Design by <a href="http://html5up.net">HTML5 UP</a>, adapted by <a href="http://www.robots.ox.ac.uk/~joao/">Jo&atilde;o F. Henriques</a></li>
-						<li><a style="background-color:none;color:999;text-decoration:none;border-bottom:none;padding:4px 6px;line-height:1.2;display:inline-block;border-radius:3px;" href="https://unsplash.com/@nandreev?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Nikita Andreev"><span style="display:inline-block;padding:2px 3px;"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:#909090;" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px;">Nikita Andreev</span></a></li>
-					</ul>
-				</footer>
-
-		</div>
+</div>
+</div>
 
 		<!-- Scripts -->
 			<!-- <script src="//www.robots.ox.ac.uk/~vgg/blog/theme/js/jquery.dropotron.min.js"></script>
