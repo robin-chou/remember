@@ -18,12 +18,12 @@
 <body onload="draw();">
 
 </body>
-<script src="http://www.wjceo.com/lib/three.js"></script>
-<script src="http://www.wjceo.com/lib/js/loaders/OBJLoader.js"></script>
-<script src="http://www.wjceo.com/lib/js/loaders/MTLLoader.js"></script>
-<script src="http://www.wjceo.com/lib/js/controls/OrbitControls.js"></script>
-<script src="http://www.wjceo.com/lib/js/libs/stats.min.js"></script>
-<script src="http://www.wjceo.com/lib/js/libs/dat.gui.min.js"></script>
+<script src="lib/js/three.js"></script>
+<script src="lib/js/OBJLoader.js"></script>
+<script src="lib/js/MTLLoader.js"></script>
+<script src="lib/js/OrbitControls.js"></script>
+<script src="lib/js/stats.min.js"></script>
+<script src="lib/js/dat.gui.min.js"></script>
 
 <script>
     var renderer;
@@ -77,13 +77,13 @@
         scene.add(helper);
 
         var mtlLoader = new THREE.MTLLoader();
-        mtlLoader.setPath('http://www.wjceo.com/lib/assets/models/');
+        mtlLoader.setPath('lib/assets/models/');
         //加载mtl文件
         mtlLoader.load('butterfly.mtl', function (material) {
             var objLoader = new THREE.OBJLoader();
             //设置当前加载的纹理
             objLoader.setMaterials(material);
-            objLoader.setPath('http://www.wjceo.com/lib/assets/models/');
+            objLoader.setPath('lib/assets/models/');
             objLoader.load('butterfly.obj', function (object) {
 
                 //获取两个翅膀的位置
