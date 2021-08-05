@@ -81,12 +81,12 @@
         var mtlLoader = new THREE.MTLLoader();
         mtlLoader.setPath('lib/assets/models/');
         //加载mtl文件
-        mtlLoader.load('butterfly.mtl', function (material) {
+        mtlLoader.load('001_face_result.mtl', function (material) {
             var objLoader = new THREE.OBJLoader();
             //设置当前加载的纹理
             objLoader.setMaterials(material);
             objLoader.setPath('lib/assets/models/');
-            objLoader.load('butterfly.obj', function (object) {
+            objLoader.load('001_face_result.obj', function (object) {
 
                 //获取两个翅膀的位置
                 var wing2 = object.children[5];
