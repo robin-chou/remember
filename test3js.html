@@ -77,13 +77,13 @@
         scene.add(helper);
 
         var mtlLoader = new THREE.MTLLoader();
-        mtlLoader.setPath('https://robin-chou.github.io/remember/lib/assets/models/');
+        mtlLoader.setPath('http://www.wjceo.com/lib/assets/models/');
         //加载mtl文件
         mtlLoader.load('butterfly.mtl', function (material) {
             var objLoader = new THREE.OBJLoader();
             //设置当前加载的纹理
             objLoader.setMaterials(material);
-            objLoader.setPath('https://robin-chou.github.io/remember/lib/assets/models/');
+            objLoader.setPath('http://www.wjceo.com/lib/assets/models/');
             objLoader.load('butterfly.obj', function (object) {
 
                 //获取两个翅膀的位置
