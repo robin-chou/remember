@@ -77,14 +77,14 @@
         scene.add(helper);
 
         var mtlLoader = new THREE.MTLLoader();
-        mtlLoader.setPath('lib/assets/models/');
+        mtlLoader.setPath('lib/assets/models/godelface/100_face/');
         //加载mtl文件
         mtlLoader.load('shaded.mtl', function (material) {
             var objLoader = new THREE.OBJLoader();
             //设置当前加载的纹理
             objLoader.setMaterials(material);
-            objLoader.setPath('lib/assets/models/');
-            objLoader.load('shaded.obj', function (object) {
+            objLoader.setPath('lib/assets/models/godelface/100_face/');
+            objLoader.load('godel02.obj', function (object) {
 
                 //获取两个翅膀的位置
              //   var wing2 = object.children[5];
